@@ -39,6 +39,10 @@ int qcom_snd_parse_of(struct snd_soc_card *card)
 			return ret;
 	}
 
+	ret = snd_soc_of_parse_pin_switches(card, "pin-switches");
+	if (ret)
+		return ret;
+
 	ret = snd_soc_of_parse_aux_devs(card, "aux-devs");
 	if (ret)
 		return ret;
